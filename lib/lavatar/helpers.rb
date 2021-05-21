@@ -17,18 +17,17 @@ module Lavatar
         viewBox: "0 0 100 100",
       }
 
-      rect_attrs = {
-        x: "0",
-        y: "0",
-        width: "100",
-        height: "100",
+      circle_attrs = {
+        cx: "50%",
+        cy: "50%",
+        r: "40",
         fill: color,
       }
 
       text_attrs = {
         x: "50%",
         y: "50%",
-        dy: "0.4em",
+        dy: "0.3em",
         fill: font_color,
         "font-size": font_size,
         "font-weight": font_weight,
@@ -36,7 +35,7 @@ module Lavatar
       }
 
       content_tag :svg, svg_attrs do
-        tag(:rect, rect_attrs) + content_tag(:text, letters, text_attrs)
+        tag(:circle, circle_attrs) + content_tag(:text, letters, text_attrs)
       end
     end
 
